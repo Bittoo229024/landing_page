@@ -1,0 +1,1362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diploma Program</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Header */
+    .header {
+      background-color: #003366;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 100%; /* Ensuring full-width header */
+    }
+
+    .header img {
+      height: 50px;
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      color: #f8f9fa;
+      margin-left: 15px;
+    }
+
+    .header .contact-info {
+      font-size: 1.2rem;
+      color: #f8f9fa;
+    }
+
+    /* Container */
+    .container.mt-4 {
+      background-color: #010e1e;
+      background-size: cover;
+      background-position: center;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      width: 100%; /* Ensuring full width for container */
+    }
+
+    .specialization-list {
+      border: 2px solid transparent;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+      border-radius: 8px;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      margin-top: 10px;
+      white-space: normal; /* Ensures text wraps properly */
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    .text-center {
+      color: white;
+    }
+
+    .icons img {
+      height: 60px;
+      margin: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .icons img:hover {
+      transform: scale(1.1);
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-container h4 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #052f64;
+    }
+
+    .form-control,
+    .form-select {
+      padding-left: 40px;
+    }
+
+    .form-container i {
+      position: absolute;
+      margin-left: 10px;
+      margin-top: 12px;
+      color: #052f64;
+    }
+
+    .btn-primary {
+      background-color: #052f64;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      padding: 12px;
+    }
+
+    .btn-primary:hover {
+      background-color: #031d40;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .container.mt-4 {
+        padding: 15px;
+      }
+
+      .specialization-list {
+        font-size: 0.9rem;
+        padding: 8px;
+      }
+
+      .icons img {
+        height: 50px;
+      }
+
+      .form-container {
+        margin-top: 20px;
+      }
+
+      .form-container h4 {
+        font-size: 1.2rem;
+      }
+
+      .col-lg-4,
+      .col-lg-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .header .contact-info {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .btn-primary {
+        font-size: 1rem;
+        padding: 10px;
+      }
+
+      .form-control,
+      .form-select {
+        font-size: 0.9rem;
+        padding-left: 30px;
+      }
+    }
+
+    .special {
+      font-weight: 600;
+      font-size: x-large;
+      font-family: Arial, Helvetica, sans-serif;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    /* Glowing Border Effect */
+    .glow-ugc {
+      border: 2px solid cyan;
+      box-shadow: 0 0 15px 5px cyan;
+    }
+
+    .glow-aicte {
+      border: 2px solid cyan;
+      box-shadow: 0 0 15px 5px cyan;
+    }
+
+    .glow-aiu {
+      border: 2px solid cyan;
+      box-shadow: 0 0 15px 5px cyan;
+    }
+
+    .approved-item img {
+  height: 100px; /* Increased height */
+  width: auto;   /* Maintains aspect ratio */
+}
+
+    .approved-item p {
+      font-size: 1rem;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .approved-item:hover {
+      box-shadow: 0 0 25px 10px cyan;
+    }
+    .diploma{
+        color: yellow;
+    }
+
+    .program-overview {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .text-content {
+      flex: 1 1 50%;
+      padding: 20px;
+    }
+
+    .text-content h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .text-content h2 {
+      font-size: 1.5rem;
+      color: #ffcc00;
+      border-bottom: 2px solid #ffcc00;
+      display: inline-block;
+      margin-bottom: 20px;
+    }
+
+    .text-content p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      flex: 1 1 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      width: auto;
+      display: block;
+      border-radius: 15px; /* Optional: rounded corners */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .program-overview {
+        flex-direction: column;
+      }
+
+      .image-container {
+        order: -1; /* Display the image first */
+      }
+
+      .text-content h1 {
+        font-size: 1.8rem;
+      }
+
+      .text-content h2 {
+        font-size: 1.2rem;
+      }
+    }
+     .programs-section {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .programs-section h1 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .card {
+      border: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card img {
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .eligibility {
+      font-size: 0.9rem;
+      margin-top: 10px;
+      color: #555;
+    }
+
+    .apply-btn {
+      background-color: #003366;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .apply-btn:hover {
+      background-color: #031d40;
+    }
+
+    #applyModal .modal-content {
+  border-radius: 10px; /* Rounded corners for modal */
+  padding: 20px;
+}
+
+/* Modal Header */
+#applyModal .modal-header {
+  border-bottom: none; /* Remove border below the header */
+  padding-bottom: 15px;
+}
+
+/* Modal Title */
+#applyModal .modal-title {
+  font-size: 1.25rem; /* Adjust title size */
+  font-weight: bold;
+}
+
+/* Close Button */
+#applyModal .btn-close {
+  font-size: 1.5rem; /* Larger close button */
+}
+
+/* Input and Select Styling */
+#applyModal .form-control, 
+#applyModal .form-select {
+  padding-left: 2.5rem; /* Space for the icons */
+  border-radius: 8px; /* Rounded corners for form inputs */
+  height: 45px; /* Adjust input height */
+}
+
+/* Input and Select Icon Styling */
+#applyModal .position-relative {
+  position: relative;
+}
+
+#applyModal .position-relative i {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%); /* Center icons vertically */
+  font-size: 18px;
+  color: #aaa; /* Light gray icons */
+}
+
+/* Apply Now Button */
+#applyModal .btn-primary {
+  padding: 12px; /* Adjust padding for the button */
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+#applyModal .btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Apply Now Form */
+#applyModal .modal-body {
+  padding-top: 15px;
+  padding-bottom: 20px;
+}
+
+/* Select Box Styling */
+#applyModal .form-select {
+  padding-left: 2.5rem; /* Space for icons */
+}
+
+/* Responsive Layout (on smaller screens) */
+@media (max-width: 576px) {
+  #applyModal .modal-dialog {
+    max-width: 100%;
+    margin: 0;
+  }
+
+  #applyModal .modal-content {
+    border-radius: 0;
+    padding: 15px;
+  }
+
+  #applyModal .modal-header {
+    padding: 10px 15px;
+  }
+
+  #applyModal .modal-title {
+    font-size: 1rem;
+  }
+
+  #applyModal .form-control,
+  #applyModal .form-select {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  #applyModal .btn-primary {
+    font-size: 14px;
+  }
+}
+.highlight-title {
+      font-weight: bold;
+      font-size: 1.25rem;
+      color: #12306e;
+    }
+    .highlight-content {
+      font-size: 0.95rem;
+      color: #333;
+    }
+    .highlight-section {
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #12306e;
+      margin-bottom: 30px;
+    }
+
+    /* Why Choose Us Section */
+    .why-choose-us {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .choose-card {
+      background: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .choose-card h3 {
+      font-size: 2rem;
+      color: #12306e;
+      margin-bottom: 10px;
+    }
+
+    .choose-card p {
+      font-size: 1rem;
+      color: #666;
+    }
+    .testimonials-section {
+    background-color: #f1f8ff; /* Light blue background */
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.testimonial-card {
+    padding: 30px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #555; /* Darker gray for text */
+    font-size: 1.1rem;
+}
+
+.testimonial-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #007bff; /* Blue border around images */
+}
+
+h2 {
+    color: #007bff; /* Blue color for the heading */
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.carousel-inner {
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    filter: invert(1);
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: #007bff; /* Blue color for carousel dots */
+}
+
+.carousel-indicators .active {
+    background-color: #0056b3; /* Darker blue for active dot */
+}
+
+h5 {
+    color: #007bff; /* Blue color for name */
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.text-muted {
+    color: #888; /* Light gray for designation */
+}
+
+@media (max-width: 767px) {
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2rem; /* Slightly smaller heading on mobile */
+    }
+}
+
+/* Container for the slider */
+#slider-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Main slider area */
+#slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+/* Slide content */
+#slider .slide {
+    display: flex;
+    flex: 0 0 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+/* Each image in the slide */
+#slider .slide img {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+    transition: transform 0.3s ease;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+    #slider .slide img {
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    #slider .slide img {
+        max-width: 100px;
+    }
+}
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-button:first-child {
+    left: 10px;
+}
+
+.slider-button:last-child {
+    right: 10px;
+}
+
+.faq-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .faq-title {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+            padding: 20px;
+            background: #f7b801;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .faq {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .faq-question {
+            background: #f9f9f9;
+            padding: 15px 20px;
+            font-size: 18px;
+            color: #333;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f1f1f1;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 20px;
+            background: #fdfdfd;
+        }
+
+        .faq-answer.open {
+            max-height: 300px; /* Set enough height for text */
+            padding: 15px 20px;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question i.rotate {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 768px) {
+            .faq-container {
+                margin: 20px;
+            }
+
+            .faq-title {
+                font-size: 20px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+        }
+        #footer {
+            background-color: #121212;
+            color: #fff;
+            padding: 20px;
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+
+        #footer .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        #footer .footer-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #footer .footer-links ul li {
+            margin: 5px 0;
+        }
+
+        #footer .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #footer .footer-links ul li a:hover {
+            text-decoration: underline;
+        }
+
+        #footer .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 768px) {
+            #footer .footer-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        #expert-section {
+            background-color: #1f3a93; /* Dark blue background */
+            padding: 50px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #expert-box {
+            background-color: #ffffff;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        #expert-box h3 {
+            font-size: 1.2rem;
+            color: #1f3a93;
+            margin-bottom: 10px;
+        }
+
+        #expert-box h2 {
+            font-size: 1.5rem;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        #expert-box a {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #007bff; /* Blue button */
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        #expert-box a:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        @media (max-width: 768px) {
+            #expert-box {
+                padding: 20px;
+            }
+
+            #expert-box h2 {
+                font-size: 1.3rem;
+            }
+
+            #expert-box h3 {
+                font-size: 1rem;
+            }
+
+            #expert-box a {
+                padding: 8px 15px;
+                font-size: 0.9rem;
+            }
+        }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header d-flex justify-content-between align-items-center flex-wrap">
+    <div class="d-flex align-items-center">
+      <img src="assets/img/global-22.webp" alt="Logo">
+    </div>
+    <div class="contact-info">
+      <i class="fas fa-phone-alt"></i> 8929409171
+    </div>
+  </header>
+
+  <!-- Main Section -->
+  <div class="container mt-4">
+    <div class="row">
+      <!-- Specializations Section -->
+      <div class="col-lg-8 mb-4">
+        <div class="specializations text-center">
+          <h3 class="diploma">Diploma Program for Working Professionals for Job Promotion</h3><br><br>
+          <h4>Available Specialisations</h4>
+          <div class="specialization-list">
+            <pre class="special"> 
+            Computer Science Engineering | Civil Engineering | 
+            Electrical Engineering | Mechanical Engineering & More
+            </pre>
+          </div>
+          <div class="d-flex flex-wrap justify-content-center mt-4">
+            <!-- UGC Approved -->
+            <div class="approved-item text-center mx-3 p-3 border border-primary rounded glow-ugc col-12 col-md-4">
+              <img src="assets/img/ugc.webp" alt="UGC Approved" class="img-fluid mb-2">
+              <p class="text-primary font-weight-bold">Approved by UGC</p>
+            </div>
+          
+            <!-- AICTE Approved -->
+            <div class="approved-item text-center mx-3 p-3 border border-success rounded glow-aicte col-12 col-md-4">
+              <img src="assets/img/aicte.webp" alt="AICTE Approved" class="img-fluid mb-2">
+              <p class="text-success font-weight-bold">Approved by AICTE</p>
+            </div>
+          
+            <!-- AIU Approved -->
+            <div class="approved-item text-center mx-3 p-3 border border-info rounded glow-aiu col-12 col-md-4">
+              <img src="assets/img/aiu.webp" alt="AIU Approved" class="img-fluid mb-2">
+              <p class="text-info font-weight-bold">Approved by AIU</p>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Form Section -->
+      <div class="col-lg-4">
+        <div class="form-container position-relative">
+          <h4 class="text-center mb-4">Admission Open for 2025 Session</h4>
+          <form>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-user"></i>
+              <input type="text" class="form-control" placeholder="Enter Full Name" required>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-envelope"></i>
+              <input type="email" class="form-control" placeholder="Enter Email" required>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-phone"></i>
+              <input type="text" class="form-control" placeholder="Enter Contact No." required>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-book"></i>
+              <select class="form-select" required>
+                <option selected disabled>Select Diploma Specialization</option>
+                <option>Diploma (Computer Science Engineering)</option>
+                <option>Diploma (Civil Engineering)</option>
+                <option>Diploma (Mechanical Engineering)</option>
+                <option>Diploma (Electrical Engineering)</option>
+                <option>Diploma (Electronics Engineering)</option>
+                <option>Diploma (Electronics and Comm. Engineering)</option>
+              </select>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-graduation-cap"></i>
+              <select class="form-select" required>
+                <option selected disabled>Choose Last Qualification</option>
+                <option>10th</option>
+                <option>12 PCM</option>
+                <option>ITI</option>
+              </select>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-briefcase"></i>
+              <select class="form-select" required>
+                <option selected disabled>Select Job Category</option>
+                <option>Government Job</option>
+                <option>Private Job</option>
+                <option>Not Working</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Apply Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <section class="program-overview">
+    <!-- Image Section -->
+    <div class="image-container">
+      <img src="assets/img/wr.webp" alt="Program Image">
+    </div>
+
+    <!-- Text Section -->
+    <div class="text-content">
+      <h1>Earn Your Certified Diploma Engineering While You Work</h1>
+      <h2>Program Overview</h2>
+      <p>
+        Diploma in Engineering offered by Global Institute of Engineering and Technology is a comprehensive program designed to provide students with a strong foundation in engineering concepts and practical skills. This course is ideal for individuals seeking to build a career in the technical field or those aiming to pursue higher education in engineering.
+      </p>
+      <p>
+        The program is structured to ensure a balance between classroom learning and hands-on practical training. Students gain in-depth knowledge in specialized fields such as Civil, Mechanical, Electrical, Electronics, and Computer Science Engineering. Conducted by experienced faculty and industry professionals, the course is aligned with modern industry requirements, ensuring that students are job-ready upon completion.
+      </p>
+      <p>
+        For working professionals or those aiming for lateral entry into engineering careers, this diploma acts as a gateway to upgrade skills and pursue advanced engineering programs like Diploma. With industry-oriented curriculum and practical exposure, the Diploma in Engineering equips students with the tools they need to excel in their chosen field and secure better career opportunities.
+      </p>
+    </div>
+  </section>
+
+  <section class="programs-section">
+    <h1>Diploma for Working Professionals</h1>
+    <div class="container">
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="assets/img/civileng.webp" class="card-img-top" alt="Civil Engineering">
+            <div class="card-body">
+              <h5 class="card-title">Diploma - Civil Engineering</h5>
+              <p class="eligibility">📝 Eligibility<br>10th (Fresh) - 3 Year (6 Sem)<br>After 12th (PCM) / ITI (Lateral) - 2 Year (4 Sem)</p>
+              <button class="btn apply-btn w-100">APPLY NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="assets/img/mehanicaleng.webp" class="card-img-top" alt="Mechanical Engineering">
+            <div class="card-body">
+              <h5 class="card-title">Diploma - Mechanical Engineering</h5>
+              <p class="eligibility">📝 Eligibility<br>10th (Fresh) - 3 Year (6 Sem)<br>After 12th (PCM) / ITI (Lateral) - 2 Year (4 Sem)</p>
+              <button class="btn apply-btn w-100">APPLY NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="assets/img/elect.webp" class="card-img-top" alt="Electrical Engineering">
+            <div class="card-body">
+              <h5 class="card-title">Diploma - Electrical Engineering</h5>
+              <p class="eligibility">📝 Eligibility<br>10th (Fresh) - 3 Year (6 Sem)<br>After 12th (PCM) / ITI (Lateral) - 2 Year (4 Sem)</p>
+              <button class="btn apply-btn w-100">APPLY NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="assets/img/electronics.webp" class="card-img-top" alt="Electronics Engineering">
+            <div class="card-body">
+              <h5 class="card-title">Diploma - Electronics Engineering</h5>
+              <p class="eligibility">📝 Eligibility<br>10th (Fresh) - 3 Year (6 Sem)<br>After 12th (PCM) / ITI (Lateral) - 2 Year (4 Sem)</p>
+              <button class="btn apply-btn w-100">APPLY NOW</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-4">
+          <div class="card">
+            <img src="assets/img/cs.webp" class="card-img-top" alt="CS Engineering">
+            <div class="card-body">
+              <h5 class="card-title">Diploma - CS Engineering</h5>
+              <p class="eligibility">📝 Eligibility<br>10th (Fresh) - 3 Year (6 Sem)<br>After 12th (PCM) / ITI (Lateral) - 2 Year (4 Sem)</p>
+              <button class="btn apply-btn w-100">APPLY NOW</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Add this inside the <body> tag -->
+
+<!-- Modal -->
+<!-- Modal HTML -->
+<div class="modal fade" id="applyModal" tabindex="-1" aria-labelledby="applyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="applyModalLabel">Get Free Admission Guidance</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <!-- Form Fields (same as before) -->
+            <div class="mb-3 position-relative">
+              <i class="fas fa-user"></i>
+              <input type="text" class="form-control" placeholder="Enter Full Name" required>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-envelope"></i>
+              <input type="email" class="form-control" placeholder="Enter Email" required>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-phone"></i>
+              <input type="text" class="form-control" placeholder="Enter Contact No." required>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-book"></i>
+              <select class="form-select" required>
+                <option selected disabled>Select Diploma Specialization</option>
+                <option>Diploma (Computer Science Engineering)</option>
+                <option>Diploma (Civil Engineering)</option>
+                <option>Diploma (Mechanical Engineering)</option>
+                <option>Diploma (Electrical Engineering)</option>
+                <option>Diploma (Electronics Engineering)</option>
+                <option>Diploma (Electronics and Comm. Engineering)</option>
+              </select>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-graduation-cap"></i>
+              <select class="form-select" required>
+                <option selected disabled>Choose Last Qualification</option>
+                <option>10th</option>
+                <option>12 PCM</option>
+                <option>ITI</option>
+              </select>
+            </div>
+            <div class="mb-3 position-relative">
+              <i class="fas fa-briefcase"></i>
+              <select class="form-select" required>
+                <option selected disabled>Select Job Category</option>
+                <option>Government Job</option>
+                <option>Private Job</option>
+                <option>Not Working</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Apply Now</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container py-5">
+    <h2 class="text-primary mb-4">Program Highlights</h2>
+    <div class="row">
+      <!-- Left Section -->
+      <div class="col-md-6 highlight-section">
+        <h3 class="highlight-title">☑️ DIRECT ENTRY FOR 12TH PCM STUDENTS</h3>
+        <p class="highlight-content">
+          Students who have completed their 12th grade with PCM (Physics, Chemistry, Mathematics) are eligible for lateral entry into the Diploma in Engineering program, allowing them to join directly in the second year of the program.
+        </p>
+        <h3 class="highlight-title">☑️ AICTE COMPLIANCE</h3>
+        <p class="highlight-content">
+          This program follows the guidelines set by the All India Council for Technical Education (AICTE), ensuring a high-quality technical education that meets industry standards.
+        </p>
+      </div>
+      <!-- Right Section -->
+      <div class="col-md-6 highlight-section">
+        <h3 class="highlight-title">☑️ SIMPLE STUDY PROGRAM FOR LATERAL ENTRY STUDENTS</h3>
+        <ul class="list-unstyled highlight-content">
+          <li><strong  style="color: #003366;">I. Flexible Class Timings:</strong> Classes are scheduled on evenings, weekends, and holidays to accommodate students who wish to pursue education alongside other commitments.</li>
+          <li><strong  style="color: #003366;">II. Practical Laboratory Training:</strong> Lateral entry students participate in on-campus practical lab sessions every Saturday to gain hands-on experience in their chosen engineering field.</li>
+          <li><strong  style="color: #003366;">III. Advanced Recorded Lessons:</strong> Access to recorded lessons from the Learning Management System (LMS) ensures students can revisit missed or challenging concepts at their convenience.</li>
+          <li><strong  style="color: #003366;">IV. Virtual Labs and Simulations:</strong> Remote virtual labs provide real-time engineering simulations, offering 24/7 accessibility for technical experimentation and skill enhancement.</li>
+          <li><strong  style="color: #003366;">V. Tailored Evaluation Process:</strong> Performance evaluations are customized for lateral entry students, including mid-term and end-term exams, practicals, and viva voce to track progress effectively.</li>
+          <li><strong  style="color: #003366;">VI. Streamlined Examination System:</strong> Students are tested through an optimized examination system, ensuring they meet course objectives without overwhelming study schedules.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <!-- Why Choose Us Section -->
+    <h2>Why Choose Us?</h2>
+    <div class="why-choose-us">
+      <div class="choose-card">
+        <h3>5000+</h3>
+        <p>Students Enrolled</p>
+      </div>
+      <div class="choose-card">
+        <h3>2400+</h3>
+        <p>Faculties from Top Institutions</p>
+      </div>
+      <div class="choose-card">
+        <h3>2500+</h3>
+        <p>Alumni Trust Base</p>
+      </div>
+      <div class="choose-card">
+        <h3>72+</h3>
+        <p>Acre of Lush Green Campus</p>
+      </div>
+    </div>
+    <!-- Testimonials Section -->
+<!-- Testimonials Section -->
+<section class="testimonials-section py-5">
+    <div class="container">
+        <h2 class="text-center mb-5" style="color: black;">Student Testimonials</h2>
+        <div id="testimonialSlider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Testimonial 1 -->
+                <div class="carousel-item active">
+                    <div class="testimonial-card text-center">
+                        <img src="assets/img/shyam.webp" class="rounded-circle mb-3" alt="Shyam Kumar Singh">
+                        <p class="testimonial-text">"The Diploma in Electronics Engineering provided me with a thorough understanding of electronic systems and their applications."</p>
+                        <h5 class="mt-3">Shyam Kumar Singh</h5>
+                        <p class="text-muted">Accenture</p>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card text-center">
+                        <img src="assets/img/ankit.webp" class="rounded-circle mb-3" alt="Ankit Gupta">
+                        <p class="testimonial-text">"The Diploma in Mechanical Engineering helped me develop a strong foundation in core mechanical concepts."</p>
+                        <h5 class="mt-3">Ankit Gupta</h5>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card text-center">
+                        <img src="assets/img/rahul.webp" class="rounded-circle mb-3" alt="Rahul">
+                        <p class="testimonial-text">"This program was perfect for building a strong base in programming and technology."</p>
+                        <h5 class="mt-3">Rahul</h5>
+                        <p class="text-muted">Reliance</p>
+                    </div>
+                </div>
+                <!-- Testimonial 4 -->
+                <div class="carousel-item">
+                    <div class="testimonial-card text-center">
+                        <img src="assets/img/nitin.webp" class="rounded-circle mb-3" alt="Nitin">
+                        <p class="testimonial-text">"The hands-on training and exposure to advanced tools prepared me for a successful career in engineering."</p>
+                        <h5 class="mt-3">Nitin</h5>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 style="text-align: center;">Our Top Placement Partners</h2>
+    <div id="slider-container">
+        <div id="slider">
+            <div class="slide">
+                <img src="assets/img/1.webp" alt="CCIL">
+                <img src="assets/img/7.webp" alt="Indian Railway">
+                <img src="assets/img/2.webp" alt="Delhi Metro">
+                <img src="assets/img/3.webp" alt="BSES">
+                <img src="assets/img/4.webp" alt="UPPCL">
+            </div>
+            <div class="slide">
+                <img src="assets/img/5.webp" alt="Company 6">
+                <img src="assets/img/6.webp" alt="Company 7">
+                <img src="assets/img/7.webp" alt="Company 8">
+                <img src="assets/img/8.webp" alt="Company 9">
+                <img src="assets/img/2.webp" alt="Company 10">
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+<div id="expert-section">
+  <div id="expert-box">
+      <h3>Are You Confused?</h3>
+      <h2>Talk to our University Career Expert</h2>
+      <button class="btn apply-btn w-100">APPLY NOW</button>
+  </div>
+</div>
+<div class="faq-container">
+    <div class="faq-title">Frequently Asked Questions</div>
+    
+    <div class="faq">
+        <div class="faq-question">
+            <span>Who is eligible for the lateral entry diploma?</span>
+            <i>&#9660;</i>
+        </div>
+        <div class="faq-answer">
+            Students who have passed 12th grade with Physics, Chemistry, and Mathematics (PCM) are eligible for direct admission to the second year of the Diploma in Engineering program.
+        </div>
+    </div>
+    
+    <div class="faq">
+        <div class="faq-question">
+            <span>What are the benefits of lateral entry?</span>
+            <i>&#9660;</i>
+        </div>
+        <div class="faq-answer">
+            Lateral entry saves a year of study, allowing students to complete their diploma faster and begin their career sooner.
+        </div>
+    </div>
+    
+    <div class="faq">
+        <div class="faq-question">
+            <span>How long is the lateral entry diploma program?</span>
+            <i>&#9660;</i>
+        </div>
+        <div class="faq-answer">
+            The lateral entry diploma program is typically two years long.
+        </div>
+    </div>
+    
+    <div class="faq">
+        <div class="faq-question">
+            <span>What streams are available for lateral entry students?</span>
+            <i>&#9660;</i>
+        </div>
+        <div class="faq-answer">
+            Streams such as Mechanical, Civil, Electrical, and Computer Engineering are commonly available for lateral entry students.
+        </div>
+    </div>
+    
+    <div class="faq">
+        <div class="faq-question">
+            <span>Is the program recognized?</span>
+            <i>&#9660;</i>
+        </div>
+        <div class="faq-answer">
+            Yes, the program is recognized by state and central technical education bodies.
+        </div>
+    </div>
+    
+    <div class="faq">
+        <div class="faq-question">
+            <span>What is the teaching methodology?</span>
+            <i>&#9660;</i>
+        </div>
+        <div class="faq-answer">
+            The program follows a mix of theoretical lectures, hands-on labs, and project-based learning.
+        </div>
+    </div>
+</div>
+<div id="footer">
+  <div class="footer-links">
+      <ul>
+          <li><a href="#">Part Time Diploma</a></li>
+          <li><a href="#">Diploma Lateral Admission</a></li>
+          <li><a href="#">Distance Diploma</a></li>
+          <li><a href="#">Open University Diploma</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Online Diploma Degree</a></li>
+          <li><a href="#">Diploma Online Admission</a></li>
+          <li><a href="#">AICTE Approved Diploma</a></li>
+          <li><a href="#">Diploma Open University</a></li>
+      </ul>
+      <ul>
+          <li><a href="#">Distance Diploma Course</a></li>
+          <li><a href="#">Diploma Evening Course</a></li>
+          <li><a href="#">Diploma Lateral Entry</a></li>
+          <li><a href="#">Evening Diploma</a></li>
+      </ul>
+  </div>
+  <div class="copyright">
+      Copyright © 2025 | Global Institute of Engineering & Technology
+  </div>
+</div>
+  <!-- Script to trigger modal on button click -->
+  <script>
+    document.querySelectorAll('.apply-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        var modal = new bootstrap.Modal(document.getElementById('applyModal'));
+        modal.show();
+      });
+    });
+  </script>
+
+  <script>
+    let currentIndex = 0;
+const slider = document.getElementById('slider');
+const slides = slider.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function moveToNextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSliderPosition();
+}
+
+function moveToPreviousSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSliderPosition();
+}
+
+function updateSliderPosition() {
+    const offset = -currentIndex * 100;  // Move the slider by 100% of the width of one slide
+    slider.style.transform = `translateX(${offset}%)`;
+}
+
+// Auto slide every 3 seconds
+setInterval(moveToNextSlide, 3000);
+
+// Optional: Add buttons for manual control
+const prevButton = document.createElement('button');
+prevButton.innerHTML = 'Prev';
+prevButton.classList.add('slider-button');
+prevButton.onclick = moveToPreviousSlide;
+
+const nextButton = document.createElement('button');
+nextButton.innerHTML = 'Next';
+nextButton.classList.add('slider-button');
+nextButton.onclick = moveToNextSlide;
+
+document.getElementById('slider-container').appendChild(prevButton);
+document.getElementById('slider-container').appendChild(nextButton);
+
+  </script>
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+<script>
+    // Select all FAQ questions
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach((question) => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('i');
+            
+            // Toggle 'open' class for the answer
+            answer.classList.toggle('open');
+            
+            // Rotate the arrow icon
+            icon.classList.toggle('rotate');
+        });
+    });
+</script>
+</body>
+
+</html>
